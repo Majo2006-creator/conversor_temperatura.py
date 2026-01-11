@@ -1,0 +1,57 @@
+"""
+Programa: Conversor de Temperatura
+Descripción:
+Este programa permite convertir temperaturas entre grados Celsius y Fahrenheit.
+El usuario puede elegir el tipo de conversión y el programa mostrará el resultado.
+Se utilizan distintos tipos de datos como enteros, flotantes, cadenas y booleanos.
+"""
+
+def convertir_celsius_a_fahrenheit(temperatura_celsius):
+    """
+    Convierte grados Celsius a Fahrenheit.
+    :param temperatura_celsius: float
+    :return: float
+    """
+    return (temperatura_celsius * 9 / 5) + 32
+
+
+def convertir_fahrenheit_a_celsius(temperatura_fahrenheit):
+    """
+    Convierte grados Fahrenheit a Celsius.
+    :param temperatura_fahrenheit: float
+    :return: float
+    """
+    return (temperatura_fahrenheit - 32) * 5 / 9
+
+
+# Variable booleana para controlar la ejecución del programa
+ejecutar_programa = True
+
+print("=== CONVERSOR DE TEMPERATURA ===")
+
+while ejecutar_programa:
+    # Menú de opciones
+    print("\nSeleccione una opción:")
+    print("1. Convertir de Celsius a Fahrenheit")
+    print("2. Convertir de Fahrenheit a Celsius")
+    print("3. Salir")
+
+    # Entrada de datos (string convertido a integer)
+    opcion = int(input("Ingrese su opción: "))
+
+    if opcion == 1:
+        temperatura = float(input("Ingrese la temperatura en Celsius: "))
+        resultado = convertir_celsius_a_fahrenheit(temperatura)
+        print(f"La temperatura en Fahrenheit es: {resultado:.2f} °F")
+
+    elif opcion == 2:
+        temperatura = float(input("Ingrese la temperatura en Fahrenheit: "))
+        resultado = convertir_fahrenheit_a_celsius(temperatura)
+        print(f"La temperatura en Celsius es: {resultado:.2f} °C")
+
+    elif opcion == 3:
+        print("Gracias por usar el programa.")
+        ejecutar_programa = False
+
+    else:
+        print("Opción no válida. Intente nuevamente.")
